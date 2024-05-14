@@ -11,17 +11,37 @@ class LoginScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
+          const Text("My food calculator"),
+          const Text("Wellcome"),
           SizedBox(
             height: 100,
             child: Image.network(
                 "https://www.marazplast.hu/img/27548/5998666770281/5998666770281.webp?time=1681301061"),
           ),
-          TextFormField(decoration: const InputDecoration()),
-          Container(),
-          const Text("LOGIN"),
-          const TextField(),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: TextFormField(
+                decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: "Email",
+                    icon: Icon(Icons.email))),
+          ),
           const SizedBox(
-            height: 40,
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: TextFormField(
+                obscureText: true,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: "Password",
+                  icon: Icon(Icons.password),
+                  suffixIcon: Icon(Icons.remove_red_eye),
+                )),
+          ),
+          const SizedBox(
+            height: 20,
           ),
         ],
       ),
