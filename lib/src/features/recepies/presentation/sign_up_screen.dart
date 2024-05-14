@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
   //state:
   bool showPassrord = false;
 
@@ -15,7 +15,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Login"),
+        title: const Text("Reg"),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -64,7 +64,31 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(
                 height: 20,
               ),
-              ElevatedButton(onPressed: () {}, child: const Text("Login")),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: TextFormField(
+                  obscureText: !showPassrord,
+                  decoration: InputDecoration(
+                    border: const OutlineInputBorder(),
+                    labelText: "Password",
+                    icon: const Icon(Icons.password),
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {});
+                        showPassrord = !showPassrord;
+                      },
+                      icon: showPassrord
+                          ? const Icon(Icons.visibility_off)
+                          : const Icon(Icons.visibility),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                  onPressed: () {}, child: const Text("Registration")),
               const SizedBox(
                 height: 30,
               ),
