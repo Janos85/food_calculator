@@ -70,7 +70,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   obscureText: !showPassrord,
                   decoration: InputDecoration(
                     border: const OutlineInputBorder(),
-                    labelText: "Password",
+                    labelText: "Repeat password",
                     icon: const Icon(Icons.password),
                     suffixIcon: IconButton(
                       onPressed: () {
@@ -87,8 +87,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               const SizedBox(
                 height: 20,
               ),
-              ElevatedButton(
-                  onPressed: () {}, child: const Text("Registration")),
+              ElevatedButton(onPressed: () {}, child: const Text("Sign up")),
               const SizedBox(
                 height: 30,
               ),
@@ -97,7 +96,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ////navigate to reg screen
                   ///
                 },
-                child: const Text("Register Hier!"),
+                child: const Text("Sing up hier!"),
               )
             ],
           ),
