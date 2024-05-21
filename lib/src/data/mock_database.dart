@@ -1,7 +1,7 @@
 import 'package:food_calculator/src/data/database_reposetory.dart';
-import 'package:food_calculator/src/features/recepies/domain/Ingredients.dart';
-import 'package:food_calculator/src/features/recepies/domain/Nutritinal_values.dart';
-import 'package:food_calculator/src/features/recepies/domain/Recipe.dart';
+import 'package:food_calculator/src/features/recepies/domain/ingredients.dart';
+import 'package:food_calculator/src/features/recepies/domain/nutritional_values.dart';
+import 'package:food_calculator/src/features/recepies/domain/recipe.dart';
 
 class MockDatabase implements DatabaseRepository {
   List<Recipe> recipes = [

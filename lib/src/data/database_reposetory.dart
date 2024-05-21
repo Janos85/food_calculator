@@ -1,5 +1,5 @@
-import 'package:food_calculator/src/features/recepies/domain/Ingredients.dart';
-import 'package:food_calculator/src/features/recepies/domain/Recipe.dart';
+import 'package:food_calculator/src/features/recepies/domain/ingredients.dart';
+import 'package:food_calculator/src/features/recepies/domain/recipe.dart';
 
 abstract class DatabaseRepository {
   List<Recipe> getRecipes();

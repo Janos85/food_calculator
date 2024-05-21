@@ -1,5 +1,5 @@
-import 'Ingredients.dart';
-import 'Nutritinal_values.dart';
+import 'Nutritional_values.dart';
+import 'ingredients.dart';
 
 class Recipe {
 //  List<String> steps;

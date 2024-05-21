@@ -1,4 +1,4 @@
-import 'Nutritinal_values.dart';
+import 'package:food_calculator/src/features/recepies/domain/nutritional_values.dart';
 
 class Ingredient {
   String name;
