@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_calculator/src/features/recepies/presentation/sign_up_screen.dart';
+import 'package:food_calculator/src/features/recepies/presentation/welcome_sreen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -64,12 +66,23 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(
                 height: 20,
               ),
-              ElevatedButton(onPressed: () {}, child: const Text("Login")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const WelcomeScreen()));
+                  },
+                  child: const Text("Login")),
               const SizedBox(
                 height: 30,
               ),
               TextButton(
                 onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignUpScreen()));
                   ////navigate to reg screen
                   ///
                 },
