@@ -32,22 +32,26 @@ class MockDatabase implements DatabaseRepository {
   ];
 
   @override
-  List<Recipe> getRecipes() {
+  Future<List<Recipe>> getRecipes() async {
+    await Future.delayed(const Duration(seconds: 2));
     return recipes;
   }
 
   @override
-  List<Ingredient> getIngredients() {
+  Future<List<Ingredient>> getIngredients() async {
+    await Future.delayed(const Duration(seconds: 2));
     return ingrediants;
   }
 
   @override
-  void addRecipe(Recipe recipe) {
+  Future<void> addRecipe(Recipe recipe) async {
+    await Future.delayed(const Duration(seconds: 2));
     recipes.add(recipe);
   }
 
   @override
-  void addIngredient(Ingredient ingredient) {
+  Future<void> addIngredient(Ingredient ingredient) async {
+    await Future.delayed(const Duration(seconds: 2));
     ingrediants.add(ingredient);
   }
 }

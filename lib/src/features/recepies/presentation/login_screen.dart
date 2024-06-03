@@ -27,10 +27,8 @@ class _LoginScreenState extends State<LoginScreen> {
               const Text("My food calculator"),
               const Text("Wellcome"),
               SizedBox(
-                height: 100,
-                child: Image.network(
-                    "https://www.marazplast.hu/img/27548/5998666770281/5998666770281.webp?time=1681301061"),
-              ),
+                  height: 100,
+                  child: Image.asset("assets/images/marhapori.png")),
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: TextFormField(
