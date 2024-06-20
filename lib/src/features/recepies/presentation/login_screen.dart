@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:food_calculator/src/data/database_reposetory.dart';
 import 'package:food_calculator/src/features/recepies/presentation/sign_up_screen.dart';
 import 'package:food_calculator/src/features/recepies/presentation/welcome_sreen.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+  final DatabaseRepository databaseRepository;
 
+  const LoginScreen({super.key, required this.databaseRepository});
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
@@ -69,7 +71,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const WelcomeScreen()));
+                            builder: (context) => WelcomeScreen(
+                                  databaseRepository: widget.databaseRepository,
+                                )));
                   },
                   child: const Text("Login")),
               const SizedBox(
@@ -80,7 +84,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const SignUpScreen()));
+                          builder: (context) => SignUpScreen(
+                                databaseRepository: widget.databaseRepository,
+                              )));
                   ////navigate to reg screen
                   ///
                 },

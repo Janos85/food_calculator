@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:food_calculator/src/data/database_reposetory.dart';
 
 class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+  final DatabaseRepository databaseRepository;
+  const SignUpScreen({super.key, required this.databaseRepository});
 
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
