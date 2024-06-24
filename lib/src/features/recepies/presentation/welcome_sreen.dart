@@ -13,27 +13,37 @@ class WelcomeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.green,
       ),
-      body: Stack(children: [
-        Image.asset("assets/images/marhapori.png"),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Center(
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  Image.network(
-                    "https://www.marazplast.hu/img/27548/5998666770281/5998666770281.webp?time=1681301061",
-                    height: 30,
-                    width: 30,
-                  ),
-                  const Text("My Food Calorie")
-                ],
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              Image.network(
+                "https://www.marazplast.hu/img/27548/5998666770281/5998666770281.webp?time=1681301061",
+                height: 30,
+                width: 30,
               ),
-            ),
-          ],
-        ),
-      ]),
+              const Text("My Food Calorie")
+            ],
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Image.asset("assets/images/marhapori2.png"),
+          const SizedBox(
+            height: 30,
+          ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Placeholder()));
+              },
+              child: const Text("explore"))
+        ],
+      ),
     );
   }
 }
