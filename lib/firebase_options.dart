@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,15 +25,9 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -50,19 +41,47 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyATIElEAJkMx9p34YTcY2DIKg6xKLj_Jk4',
-    appId: '1:482310882655:android:b21ee75c96ee5de3f0e2ea',
-    messagingSenderId: '482310882655',
-    projectId: 'foodcalculator-53a1c',
-    storageBucket: 'foodcalculator-53a1c.appspot.com',
+    apiKey: 'AIzaSyD333guOALDhiWYsEK-zCsQOw9wOICzL9M',
+    appId: '1:545725190299:android:537624e9b712193096b63e',
+    messagingSenderId: '545725190299',
+    projectId: 'food-calculator-23',
+    storageBucket: 'food-calculator-23.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyB003w01_4EoT_fGYghHbkMyOxBSSv5E0c',
-    appId: '1:482310882655:ios:1eab740c7fc39323f0e2ea',
-    messagingSenderId: '482310882655',
-    projectId: 'foodcalculator-53a1c',
-    storageBucket: 'foodcalculator-53a1c.appspot.com',
+    apiKey: 'AIzaSyBkTAeM7tMDSPa0F2RFn6H6yymLIKEQ8-g',
+    appId: '1:545725190299:ios:cbec7128158d5fa896b63e',
+    messagingSenderId: '545725190299',
+    projectId: 'food-calculator-23',
+    storageBucket: 'food-calculator-23.appspot.com',
     iosBundleId: 'com.example.foodCalculator',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyA6glb3n5X-_nHJirJO1xN-M6g20c8Cw34',
+    appId: '1:545725190299:web:ab541a428bbf1c1296b63e',
+    messagingSenderId: '545725190299',
+    projectId: 'food-calculator-23',
+    authDomain: 'food-calculator-23.firebaseapp.com',
+    storageBucket: 'food-calculator-23.appspot.com',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyBkTAeM7tMDSPa0F2RFn6H6yymLIKEQ8-g',
+    appId: '1:545725190299:ios:cbec7128158d5fa896b63e',
+    messagingSenderId: '545725190299',
+    projectId: 'food-calculator-23',
+    storageBucket: 'food-calculator-23.appspot.com',
+    iosBundleId: 'com.example.foodCalculator',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyA6glb3n5X-_nHJirJO1xN-M6g20c8Cw34',
+    appId: '1:545725190299:web:85e4788098cd9b7196b63e',
+    messagingSenderId: '545725190299',
+    projectId: 'food-calculator-23',
+    authDomain: 'food-calculator-23.firebaseapp.com',
+    storageBucket: 'food-calculator-23.appspot.com',
+  );
+
 }

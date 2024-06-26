@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "482310882655",
-    "project_id": "foodcalculator-53a1c",
-    "storage_bucket": "foodcalculator-53a1c.appspot.com"
+    "project_number": "545725190299",
+    "project_id": "food-calculator-23",
+    "storage_bucket": "food-calculator-23.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:482310882655:android:b21ee75c96ee5de3f0e2ea",
+        "mobilesdk_app_id": "1:545725190299:android:537624e9b712193096b63e",
         "android_client_info": {
           "package_name": "com.example.food_calculator"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyATIElEAJkMx9p34YTcY2DIKg6xKLj_Jk4"
+          "current_key": "AIzaSyD333guOALDhiWYsEK-zCsQOw9wOICzL9M"
         }
       ],
       "services": {
