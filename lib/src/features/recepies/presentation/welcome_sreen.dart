@@ -19,8 +19,8 @@ class WelcomeScreen extends StatelessWidget {
           Stack(
             alignment: Alignment.center,
             children: [
-              Image.network(
-                "https://www.marazplast.hu/img/27548/5998666770281/5998666770281.webp?time=1681301061",
+              Image.asset(
+                "assets/images/fazek.png",
                 height: 30,
                 width: 30,
               ),

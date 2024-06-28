@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:food_calculator/src/data/auth_repository.dart';
 import 'package:food_calculator/src/data/database_reposetory.dart';
 import 'package:food_calculator/src/features/recepies/presentation/sign_up_screen.dart';
 import 'package:food_calculator/src/features/recepies/presentation/welcome_sreen.dart';
 
 class LoginScreen extends StatefulWidget {
   final DatabaseRepository databaseRepository;
+  final AuthRepository authRepository;
 
-  const LoginScreen({super.key, required this.databaseRepository});
+  const LoginScreen(
+      {super.key,
+      required this.databaseRepository,
+      required this.authRepository});
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
@@ -86,6 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       MaterialPageRoute(
                           builder: (context) => SignUpScreen(
                                 databaseRepository: widget.databaseRepository,
+                                authRepository: widget.authRepository,
                               )));
                   ////navigate to reg screen
                   ///
