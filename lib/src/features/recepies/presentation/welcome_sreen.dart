@@ -21,8 +21,8 @@ class WelcomeScreen extends StatelessWidget {
             children: [
               Image.asset(
                 "assets/images/fazek.png",
-                height: 30,
-                width: 30,
+                height: 50,
+                width: 50,
               ),
               const Text("My Food Calorie")
             ],
