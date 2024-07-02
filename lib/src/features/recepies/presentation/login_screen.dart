@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:food_calculator/src/data/auth_repository.dart';
 import 'package:food_calculator/src/data/database_reposetory.dart';
 import 'package:food_calculator/src/features/recepies/presentation/sign_up_screen.dart';
-import 'package:food_calculator/src/features/recepies/presentation/welcome_sreen.dart';
 
 class LoginScreen extends StatefulWidget {
   final DatabaseRepository databaseRepository;
@@ -18,7 +17,11 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   //state:
-  bool showPassrord = false;
+  bool showPassword = false;
+
+  // Datatype           name of variable = value
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -39,11 +42,12 @@ class _LoginScreenState extends State<LoginScreen> {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: TextFormField(
+                    controller: emailController,
                     decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: "Email",
-                  icon: Icon(Icons.email),
-                )),
+                      border: OutlineInputBorder(),
+                      labelText: "Email",
+                      icon: Icon(Icons.email),
+                    )),
               ),
               const SizedBox(
                 height: 20,
@@ -51,7 +55,8 @@ class _LoginScreenState extends State<LoginScreen> {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: TextFormField(
-                  obscureText: !showPassrord,
+                  controller: passwordController,
+                  obscureText: !showPassword,
                   decoration: InputDecoration(
                     border: const OutlineInputBorder(),
                     labelText: "Password",
@@ -59,9 +64,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     suffixIcon: IconButton(
                       onPressed: () {
                         setState(() {});
-                        showPassrord = !showPassrord;
+                        showPassword = !showPassword;
                       },
-                      icon: showPassrord
+                      icon: showPassword
                           ? const Icon(Icons.visibility_off)
                           : const Icon(Icons.visibility),
                     ),
@@ -73,12 +78,8 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => WelcomeScreen(
-                                  databaseRepository: widget.databaseRepository,
-                                )));
+                    widget.authRepository.loginWithEmailAndPassword(
+                        emailController.text, passwordController.text);
                   },
                   child: const Text("Login")),
               const SizedBox(

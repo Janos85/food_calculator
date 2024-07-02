@@ -16,7 +16,10 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   //state:
-  bool showPassrord = false;
+  bool showPassword = false;
+
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -39,11 +42,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: TextFormField(
+                    controller: emailController,
                     decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: "Email",
-                  icon: Icon(Icons.email),
-                )),
+                      border: OutlineInputBorder(),
+                      labelText: "Email",
+                      icon: Icon(Icons.email),
+                    )),
               ),
               const SizedBox(
                 height: 20,
@@ -51,7 +55,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: TextFormField(
-                  obscureText: !showPassrord,
+                  controller: passwordController,
+                  obscureText: !showPassword,
                   decoration: InputDecoration(
                     border: const OutlineInputBorder(),
                     labelText: "Password",
@@ -59,9 +64,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     suffixIcon: IconButton(
                       onPressed: () {
                         setState(() {});
-                        showPassrord = !showPassrord;
+                        showPassword = !showPassword;
                       },
-                      icon: showPassrord
+                      icon: showPassword
                           ? const Icon(Icons.visibility_off)
                           : const Icon(Icons.visibility),
                     ),
@@ -74,7 +79,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: TextFormField(
-                  obscureText: !showPassrord,
+                  obscureText: !showPassword,
                   decoration: InputDecoration(
                     border: const OutlineInputBorder(),
                     labelText: "Repeat password",
@@ -82,9 +87,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     suffixIcon: IconButton(
                       onPressed: () {
                         setState(() {});
-                        showPassrord = !showPassrord;
+                        showPassword = !showPassword;
                       },
-                      icon: showPassrord
+                      icon: showPassword
                           ? const Icon(Icons.visibility_off)
                           : const Icon(Icons.visibility),
                     ),
@@ -94,7 +99,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
               const SizedBox(
                 height: 20,
               ),
-              ElevatedButton(onPressed: () {}, child: const Text("Sign up")),
+              ElevatedButton(
+                  onPressed: () {
+                    widget.authRepository.signUpWithEmailAndPassword(
+                        emailController.text, passwordController.text);
+                  },
+                  child: const Text("Sign up")),
               const SizedBox(
                 height: 30,
               ),
