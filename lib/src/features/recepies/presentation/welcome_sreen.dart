@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_calculator/src/data/database_reposetory.dart';
+import 'package:food_calculator/src/features/recepies/presentation/discover_foods.dart';
 
 class WelcomeScreen extends StatelessWidget {
   final DatabaseRepository databaseRepository;
@@ -39,7 +40,7 @@ class WelcomeScreen extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const Placeholder()));
+                        builder: (context) => const DiscoveryPage()));
               },
               child: const Text("explore"))
         ],
