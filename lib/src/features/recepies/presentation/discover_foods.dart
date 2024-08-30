@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:food_calculator/src/data/auth_repository.dart';
 import 'package:food_calculator/src/data/database_reposetory.dart';
-import 'package:food_calculator/src/data/mock_database.dart';
+import 'package:food_calculator/src/features/recepies/domain/drawer.dart';
 import 'package:food_calculator/src/features/recepies/domain/recipe.dart';
 
 class DiscoveryPage extends StatelessWidget {
-  const DiscoveryPage({super.key});
+  final DatabaseRepository database;
+  final AuthRepository authRepository;
+  const DiscoveryPage(
+      {super.key, required this.database, required this.authRepository});
 
   @override
   Widget build(BuildContext context) {
-    final DatabaseRepository database = MockDatabase();
     return Scaffold(
+      drawer: MyDrawer(
+          databaseRepository: database, authRepository: authRepository),
       body: FutureBuilder<List<Recipe>>(
         future: database.getRecipes(),
         builder: (context, snapshot) {
@@ -47,7 +52,11 @@ class FoodCard extends StatelessWidget {
     return Card(
         child: Column(
       children: [
-        Image.asset(recipe.picture),
+        Image.asset(
+          recipe.picture,
+          width: 20,
+          height: 20,
+        ),
         Text(recipe.name),
         Text(recipe.getNutritionalValue().calorie.toString())
       ],

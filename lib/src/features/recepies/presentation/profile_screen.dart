@@ -1,35 +1,35 @@
 import 'package:flutter/material.dart';
-
-void main() {
-  runApp(const CalorieTrackerApp());
-}
-
-class CalorieTrackerApp extends StatelessWidget {
-  const CalorieTrackerApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: ProfileScreen(),
-    );
-  }
-}
+import 'package:food_calculator/src/data/auth_repository.dart';
+import 'package:food_calculator/src/data/database_reposetory.dart';
+import 'package:food_calculator/src/features/recepies/domain/drawer.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+  final DatabaseRepository databaseRepository;
+  final AuthRepository authRepository;
+  const ProfileScreen(
+      {super.key,
+      required this.databaseRepository,
+      required this.authRepository});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        title: const Text("Profile"),
+      ),
+      drawer: MyDrawer(
+          databaseRepository: databaseRepository,
+          authRepository: authRepository),
       body: Column(
         children: [
           Container(
             padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
-            color: Colors.lightGreenAccent,
+            color: Colors.green,
             child: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(Icons.menu),
+                // Icon(Icons.menu),
                 Text(
                   'My Profile',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),

@@ -28,7 +28,10 @@ class MainApp extends StatelessWidget {
                   ? LoginScreen(
                       databaseRepository: databaseRepository,
                       authRepository: authRepository)
-                  : WelcomeScreen(databaseRepository: databaseRepository));
+                  : WelcomeScreen(
+                      databaseRepository: databaseRepository,
+                      authRepository: authRepository,
+                    ));
         });
   }
 }
