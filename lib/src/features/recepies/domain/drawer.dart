@@ -3,6 +3,7 @@ import 'package:food_calculator/src/data/auth_repository.dart';
 import 'package:food_calculator/src/data/database_reposetory.dart';
 import 'package:food_calculator/src/features/recepies/presentation/Profile_screen.dart';
 import 'package:food_calculator/src/features/recepies/presentation/discover_foods.dart';
+import 'package:food_calculator/src/features/recepies/presentation/history_screen.dart';
 import 'package:food_calculator/src/features/recepies/presentation/login_screen.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -39,6 +40,18 @@ class MyDrawer extends StatelessWidget {
                       builder: (context) => DiscoveryPage(
                             authRepository: authRepository,
                             database: databaseRepository,
+                          )));
+            },
+          ),
+          ListTile(
+            title: const Text("History "),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => HistoryScreen(
+                            authRepository: authRepository,
+                            databaseRepository: databaseRepository,
                           )));
             },
           ),

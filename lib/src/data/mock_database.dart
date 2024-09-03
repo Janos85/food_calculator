@@ -5,18 +5,21 @@ import 'package:food_calculator/src/features/recepies/domain/recipe.dart';
 
 class MockDatabase implements DatabaseRepository {
   List<Recipe> recipes = [
-    Recipe(name: "Nudeln mit Tomatensoße", picture: "", ingredients: [
-      Ingredient(
-          name: "Nudeln",
-          amount: 3,
-          nutritionalValue: NutritionalValue(
-              calorie: 100, protein: 15, fat: 1, sugar: 5, salt: 1)),
-      Ingredient(
-          name: "Tomaten",
-          amount: 2,
-          nutritionalValue: NutritionalValue(
-              calorie: 30, protein: 1, fat: 0, sugar: 5, salt: 1))
-    ])
+    Recipe(
+        name: "Nudeln mit Tomatensoße",
+        picture: "assets/images/food1.png",
+        ingredients: [
+          Ingredient(
+              name: "Nudeln",
+              amount: 3,
+              nutritionalValue: NutritionalValue(
+                  calorie: 100, protein: 15, fat: 1, sugar: 5, salt: 1)),
+          Ingredient(
+              name: "Tomaten",
+              amount: 2,
+              nutritionalValue: NutritionalValue(
+                  calorie: 30, protein: 1, fat: 0, sugar: 5, salt: 1))
+        ])
   ];
   List<Ingredient> ingrediants = [
     Ingredient(
