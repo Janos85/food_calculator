@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_calculator/src/data/auth_repository.dart';
 import 'package:food_calculator/src/data/database_reposetory.dart';
 import 'package:food_calculator/src/features/recepies/presentation/Profile_screen.dart';
+import 'package:food_calculator/src/features/recepies/presentation/add_recepies.dart';
 import 'package:food_calculator/src/features/recepies/presentation/discover_foods.dart';
 import 'package:food_calculator/src/features/recepies/presentation/history_screen.dart';
 import 'package:food_calculator/src/features/recepies/presentation/login_screen.dart';
@@ -53,6 +54,17 @@ class MyDrawer extends StatelessWidget {
                             authRepository: authRepository,
                             databaseRepository: databaseRepository,
                           )));
+            },
+          ),
+          ListTile(
+            title: const Text("Add Recipes"),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => AddRecepies(
+                          database: databaseRepository,
+                          authRepository: authRepository)));
             },
           ),
           ListTile(
